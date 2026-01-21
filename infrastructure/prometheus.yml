@@ -1,0 +1,18 @@
+# Global configuration for Prometheus
+global:
+  scrape_interval: 15s # Intervalul la care Prometheus colectează datele
+  evaluation_interval: 15s
+
+# Aici configurăm Prometheus să citească metricile de la aplicația Java
+scrape_configs:
+  - job_name: 'spring-boot-backend'
+    metrics_path: '/actuator/prometheus' # Endpoint-ul standard creat de Micrometer
+    static_configs:
+      - targets: ['host.docker.internal:8080'] # Adresa aplicației în container
+    
+    # Demonstrează atenție la securitate și performanță
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: instance
+        replacement: 'production-server-01'
+        
