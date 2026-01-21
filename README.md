@@ -33,6 +33,19 @@ Adhering to **Clean Architecture** and SOLID principles:
 3. **Frontend Access:** `http://localhost:3000`
 4. **Monitoring Dashboard:** `http://localhost:9090` (Prometheus)
 
+---
+
+## 📦 Database & ERP Management (IT Technician Skills)
+**Location:** `/Database-Management-ERP`
+
+This section demonstrates technical analytical thinking and database administration skills for local business environments.
+
+*   **MySQL Administration:** Advanced queries for inventory tracking, entries/exits management, and stock reporting.
+*   **ERP Data Processing:** Python scripts designed to extract and clean data for integration with ERP systems (like SAP).
+*   **Business Intelligence:** Methods for classifying and interpreting information to optimize management flows.
+
+---
+
 ## 👨‍💻 About the Author
 **Adrian Roman**  
 **Senior Full Stack Developer | SDET | IT Management Specialist**  
