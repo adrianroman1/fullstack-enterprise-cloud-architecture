@@ -48,9 +48,13 @@ This section demonstrates technical analytical thinking and database administrat
 
 ## 👨‍💻 About the Author
 **Adrian Roman**  
-**Senior Full Stack Developer | SDET | IT Management Specialist**  
-*15+ years of experience in technology leadership, international SaaS/ERP projects, and Cloud-Native development.*
+**Senior IT Management Specialist | Full Stack Developer | SDET**  
+*15+ years of driving technology leadership, enterprise ERP integrations, and resilient infrastructure management.*
 
-- **Location:** Timisoara, Romania (Open to Hybrid model)
-- **Specializations:** Java Ecosystem, SAP BTP, Azure/AWS, QA Automation.
-- **Mindset:** Quality-driven, cost-conscious, and proactive.
+- **Location:** București / Râmnicu Vâlcea (Available for On-site, Hybrid, or Remote roles).
+- **Mobility:** Flexible across major IT hubs, including Timișoara.
+- **Core Specializations:** 
+  - **Data & ERP:** Database Administration (MySQL), SAP BTP Integration, Informatica de Gestiune.
+  - **Cloud & DevOps:** Cloud-Native Development (Azure/AWS/GCP), Docker Ecosystem, Java Ecosystem.
+  - **Security & QA:** Cybersecurity (SOC/NOC Monitoring), QA Automation, Incident Response.
+- **Mindset:** Efficiency-oriented, focusing on RPO/RTO optimization, cost-conscious architecture, and proactive system hardening.
