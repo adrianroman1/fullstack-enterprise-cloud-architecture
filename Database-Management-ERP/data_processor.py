@@ -1,7 +1,3 @@
-
-
-
-
 import csv
 import os
 
