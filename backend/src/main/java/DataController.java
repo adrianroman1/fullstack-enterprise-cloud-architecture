@@ -1,21 +1,23 @@
-package com.adrian.demo.controller;
+package com.adrian.enterprise.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import io.micrometer.core.annotation.Timed;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/data")
 public class DataController {
 
-    /**
-     * Demonstrates proficiency in OData protocol standards 
-     * and system observability using Micrometer.
-     */
     @GetMapping("/items")
-    @Timed(value = "get.items.time", description = "Time taken to return items")
-    public String getODataItems() {
-        return "{ \"@odata.context\": \"$metadata#Items\", \"value\": [{\"id\": 1, \"name\": \"Enterprise Component\"}] }";
+    @Timed(value = "api.odata.items", description = "Time taken to return OData items")
+    public Map<String, Object> getODataItems() {
+        return Map.of(
+            "@odata.context", "$metadata#Items",
+            "value", List.of(
+                Map.of("id", 101, "name", "Enterprise Asset", "status", "Certified")
+            )
+        );
     }
 }
+
