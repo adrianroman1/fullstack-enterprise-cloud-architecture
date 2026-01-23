@@ -1,0 +1,23 @@
+# Java / Maven
+target/
+*.class
+*.jar
+*.war
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.pytest_cache/
+
+# Docker & OS
+.DS_Store
+*.log
+.env
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
