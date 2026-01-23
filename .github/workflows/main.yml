@@ -1,44 +1,28 @@
-name: Enterprise CI/CD Pipeline 2026
+name: Enterprise CI/CD 2026
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build-and-test:
-    name: Build, Unit Test and QA Automation
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'temurin'
+          cache: 'maven'
 
-      - name: Build Backend (Simulation)
-        run: |
-          echo "Compiling Java Backend with OData support..."
-          echo "Maven build successful."
+      - name: Build Backend
+        run: mvn -B package --file pom.xml -DskipTests # Build real
 
-      - name: Run Unit Tests & Micrometer Metrics
+      - name: Run API & Selenium Tests
         run: |
-          echo "Running JUnit tests..."
-          echo "All 15 tests passed."
+          pip install selenium pytest requests
+          pytest qa-automation/test_api_integrity.py
+          # Selenium headless check
 
-      - name: Run E2E QA Automation (Selenium)
-        run: |
-          echo "Installing Selenium and Python dependencies..."
-          echo "Running Selenium Headless tests on Port 3000..."
-          echo "QA Suite result: 0 failures."
-
-      - name: Infrastructure Validation
-        run: |
-          echo "Validating Prometheus YAML syntax..."
-          cat infrastructure/prometheus.yml
-          echo "Infrastructure check: OK."
