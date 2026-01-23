@@ -1,4 +1,4 @@
-# Enterprise Full-Stack Cloud-Native Architecture
+# Enterprise Core Engine
 
 [![Enterprise CI/CD Pipeline 2026](https://github.com)](https://github.com)
 
