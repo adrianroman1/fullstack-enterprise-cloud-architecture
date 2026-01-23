@@ -1,35 +1,46 @@
 import csv
 import os
+import logging
 
-# Modul tehnic pentru procesarea datelor destinate integrării ERP (ex: SAP)
-# Demonstrează culegerea, clasificarea și interpretarea informațiilor de gestiune.
+# Configurare Logging de producție
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 def process_erp_data(input_file):
-    print(f"[*] Inițiere procesare date din: {input_file}")
+    """
+    Procesează datele de inventar pentru integrarea cu sisteme ERP (ex. SAP).
+    Include logică de validare și alertare automată.
+    """
+    logger.info(f"Inițiere procesare date din: {input_file}")
     
     if not os.path.exists(input_file):
-        print("[!] Eroare: Fișierul de date nu a fost găsit pentru import.")
+        logger.error(f"Fișierul {input_file} nu a fost găsit. Verifică montarea volumului în Docker.")
         return
 
     try:
         with open(input_file, mode='r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                # Logică analitică pentru identificarea stocurilor critice
-                # Aceasta fluidizează informația pentru deciziile de aprovizionare
+                # Validare date (Standard de producție)
                 cod = row.get('cod_produs', 'N/A')
-                cantitate = int(row.get('cantitate', 0))
+                try:
+                    cantitate = int(row.get('cantitate', 0))
+                except ValueError:
+                    logger.warning(f"Format cantitate invalid pentru produsul {cod}")
+                    continue
                 
+                # Logică analitică pentru stocuri critice
                 if cantitate < 10:
-                    print(f"[ALERTA STOC] Produsul {cod} necesită reaprovizionare (Cantitate: {cantitate})")
+                    logger.warning(f"[STOC CRITIC] Produsul {cod} necesită aprovizionare. Cantitate: {cantitate}")
                 else:
-                    print(f"[INFO] Produs {cod}: Stoc optim.")
+                    logger.debug(f"Produs {cod}: Stoc în parametri optimi.")
                     
     except Exception as e:
-        print(f"[!] Eroare tehnică la procesarea datelor: {e}")
+        logger.critical(f"Eroare sistemică la procesarea datelor ERP: {e}")
 
 if __name__ == "__main__":
-    # Simulare procesare fișier exportat din baza de date MySQL
-    print("--- Sistem Gestiune Adrian Roman - Data Processor v1.0 ---")
-    # process_erp_data('stocuri_export.csv') 
+    # În producție, calea fișierului poate fi preluată dintr-o variabilă de mediu
+    DATA_PATH = os.getenv('ERP_DATA_PATH', 'stocuri_export.csv')
+    process_erp_data(DATA_PATH)
+
 
