@@ -1,60 +1,45 @@
-# Enterprise Core Engine
+# Enterprise Core Engine 🚀
 
-[![Enterprise CI/CD Pipeline 2026](https://github.com)](https://github.com)
+[![Status: Production-Ready](https://img.shields.io)](https://github.com)
+[![Tech: Java 21 LTS](https://img.shields.io)](https://spring.io)
+[![Ops: Docker & Prometheus](https://img.shields.io)](https://www.docker.com)
 
 ## 🚀 Overview
-This repository showcases a production-grade Full-Stack architecture engineered for high scalability and enterprise-level observability. Developed as a demonstration of technical proficiency for Senior roles, it integrates robust **Java 11+** backend services with modern frontend frameworks and comprehensive automation.
+Acest repository reprezintă o arhitectură **Full-Stack de nivel Enterprise**, optimizată pentru scalabilitate critică și observabilitate în timp real. Proiectul este structurat ca un "Production-Ready Boilerplate" pentru anul 2026, integrând standarde înalte de securitate și integritate a datelor.
 
-**Project Status:** 2026 Production-Ready Boilerplate  
-**Primary Tech Stack:** Java 17, React/SAPUI5, OData, SAP BTP (Kyma), Azure, and Docker.
+**Target:** Senior Roles (Developer, SDET, Cloud Integration).  
+**Tech Stack:** Java 21, Spring Boot 3.4, React, SAP BTP (Kyma), Docker & Prometheus.
 
-## 🛠 Key Features & Senior Expertise
-- **Backend Excellence:** Spring Boot Microservices featuring **OData protocol** integration and RESTful API design.
-- **Frontend Mastery:** Interactive interfaces built with **React** and **SAPUI5**, focused on real-time data binding and UX.
-- **Advanced Observability:** Full implementation of **Micrometer** and **Prometheus** for system-wide health monitoring.
-- **QA Automation (SDET):** Complete E2E testing lifecycle using **Selenium & Python**, covering functional, regression, and performance scenarios.
-- **Infrastructure as Code:** Containerized deployment via **Docker** and Kubernetes orchestration (optimized for **SAP BTP / Kyma**).
-- **Automated DevOps:** Industrial-strength **GitHub Actions** CI/CD pipeline for seamless Build, Test, and Quality Gate enforcement.
+## 🛠 Key Senior Expertise
+- **Backend Architecture:** Microservicii Spring Boot 3.4 cu design API RESTful și management de configurare prin variabile de mediu.
+- **Advanced Observability:** Implementare nativă **Prometheus & Micrometer**. Monitorizarea performanței sistemului este activă la endpoint-ul `/actuator/prometheus`.
+- **Infrastructure as Code (IaC):** Orchestrare prin **Docker Compose**, cu mecanisme de *Healthcheck* pentru baze de date, pregătit pentru deployment în **SAP BTP (Kyma)**.
+- **Data Integrity:** Module avansate de gestionare a fluxurilor de date între sistemele locale (MySQL) și ERP-uri globale (SAP).
 
 ## 🏗 Architecture Pattern
-Adhering to **Clean Architecture** and SOLID principles:
-- **API Layer:** Secure request handling and OData metadata management.
-- **Business Logic Layer:** Decoupled service architecture for strategic scalability.
-- **Persistence Layer:** Integrated support for **SAP HANA**, PostgreSQL, and SQL/NoSQL databases.
+Proiectul respectă principiile **Clean Architecture** și **SOLID**:
+- **API Layer:** Decuplare totală între prezentare și logica de business.
+- **Persistence Layer:** Suport pentru tranzacții ACID în medii high-load (PostgreSQL/MySQL).
+- **Security:** Arhitectură pregătită pentru integrare OAuth2/OIDC și strategii de securitate defensivă.
 
-## 🧪 Testing & Quality Assurance
-- **Unit & Integration:** JUnit 5, Mockito, and TestContainers.
-- **E2E Automation:** Located in `/qa-automation`, simulating critical user journeys.
-- **Performance:** **JMeter** scripts included for stress testing and bottleneck analysis.
+## 📦 Database & ERP Management (Senior Skills)
+**Location:** `/Database-Management-ERP`
+Demonstrarea competențelor de administrare baze de date pentru infrastructuri critice:
+*   **MySQL Optimization:** Scripturi SQL cu indexare avansată pentru prevenirea blocajelor în gestiunea stocurilor.
+*   **ERP Data Processing:** Scripturi Python de producție cu **Logging profesional** și gestiune robustă a erorilor pentru integrarea cu sisteme SAP.
 
 ## 🚦 Getting Started
-1. **Clone the repository:** `git clone https://github.com`
-2. **Launch Infrastructure:** `docker-compose up -d`
-3. **Frontend Access:** `http://localhost:3000`
-4. **Monitoring Dashboard:** `http://localhost:9090` (Prometheus)
-
----
-
-## 📦 Database & ERP Management (IT Technician Skills)
-**Location:** `/Database-Management-ERP`
-
-This section demonstrates technical analytical thinking and database administration skills for local business environments.
-
-*   **MySQL Administration:** Advanced queries for inventory tracking, entries/exits management, and stock reporting.
-*   **ERP Data Processing:** Python scripts designed to extract and clean data for integration with ERP systems (like SAP).
-*   **Business Intelligence:** Methods for classifying and interpreting information to optimize management flows.
+1. **Clone:** `git clone https://github.com.git`
+2. **Deploy Infrastructure:** `docker-compose up -d`
+3. **Health Metrics:** `http://localhost:8080/actuator/prometheus`
+4. **Monitoring:** `http://localhost:9090` (Prometheus Dashboard)
 
 ---
 
 ## 👨‍💻 About the Author
 **Adrian Roman**  
 **Senior IT Management Specialist | Full Stack Developer | SDET**  
-*15+ years of driving technology leadership, enterprise ERP integrations, and resilient infrastructure management.*
+*15+ ani în leadership tehnologic, integrări ERP și managementul sistemelor reziliente.*
 
-- **Location:** București / Râmnicu Vâlcea (Available for On-site, Hybrid, or Remote roles).
-- **Mobility:** Flexible across major IT hubs, including Timișoara.
-- **Core Specializations:** 
-  - **Data & ERP:** Database Administration (MySQL), SAP BTP Integration, Informatica de Gestiune.
-  - **Cloud & DevOps:** Cloud-Native Development (Azure/AWS/GCP), Docker Ecosystem, Java Ecosystem.
-  - **Security & QA:** Cybersecurity (SOC/NOC Monitoring), QA Automation, Incident Response.
-- **Mindset:** Efficiency-oriented, focusing on RPO/RTO optimization, cost-conscious architecture, and proactive system hardening.
+- **Locație:** București / Râmnicu Vâlcea (Disponibilitate Hybrid / Remote / Timișoara).
+- **Mindset:** Eficiență operațională, securitate proactivă și arhitecturi scalabile orientate spre rezultat.
