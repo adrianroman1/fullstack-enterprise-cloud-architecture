@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: enterprise-core-engine
+  main:
+    banner-mode: "off"
+
+# Configurare Actuator pentru monitorizarea 2026 (Prometheus)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus, metrics
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+# Server Config
+server:
+  port: 8080
+  error:
+    include-message: always
+
+    
