@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  erp-db:
+    image: postgres:16-alpine
+    container_name: erp-database
+    environment:
+      POSTGRES_DB: enterprise_db
+      POSTGRES_USER: adrian_admin
+      POSTGRES_PASSWORD: prod_password_2026
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U adrian_admin -d enterprise_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  enterprise-app:
+    build: .
+    container_name: core-engine-java
+    ports:
+      - "8080:8080"
+    depends_on:
+      erp-db:
+        condition: service_healthy
+
+
