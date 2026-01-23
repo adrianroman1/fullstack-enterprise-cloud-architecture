@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org" xmlns:xsi="http://www.w3.org"
+    xsi:schemaLocation="http://maven.apache.org https://maven.apache.org">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.1</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.adrian.enterprise</groupId>
+    <artifactId>core-engine</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Enterprise Core Engine</name>
+    <description>Production-grade architecture for SAP BTP and Cloud-Native environments</description>
+
+    <properties>
+        <java.version>21</java.version>
+        <sap.cloud.sdk.version>5.10.0</sap.cloud.sdk.version>
+    </properties>
+
+    <dependencies>
+        <!-- Core Web & OData Support -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Observability: Micrometer & Prometheus (Standard 2026) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+
+        <!-- SAP Cloud SDK (Pentru integrare BTP/Capgemini) -->
+        <dependency>
+            <groupId>com.sap.cloud.sdk.cloudplatform</groupId>
+            <artifactId>scp-cf</artifactId>
+            <version>${sap.cloud.sdk.version}</version>
+        </dependency>
+
+        <!-- Testare -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
