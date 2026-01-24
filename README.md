@@ -1,9 +1,9 @@
 # Enterprise Core Engine 🚀
 
-[![Status: Production-Ready](https://img.shields.io/badge/Status-Production--Ready-brightgreen)](https://github.com/adrianroman1)
-[![Tech: Java 21 LTS](https://img.shields.io/badge/Tech-Java%2021%20LTS-blue)](https://spring.io)
-[![CI/CD: GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-orange)](https://github.com/features/actions)
-
+[![Status: Production-Ready](https://img.shields.io/badge/Status-Production--Ready-brightgreen)](#)
+[![Tech: Java 21 LTS](https://img.shields.io/badge/Tech-Java%2021%20LTS-red)](https://www.oracle.com/java/technologies/downloads/#java21)
+[![CI/CD: GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blueviolet)](https://github.com/features/actions)
+ 
 ## 🚀 Overview
 Acest repository reprezintă o arhitectură **Full-Stack de nivel Enterprise**, optimizată pentru scalabilitate critică și observabilitate în timp real. Proiectul este structurat ca un "Production-Ready Boilerplate" pentru anul 2026, integrând standarde înalte de securitate și integritate a datelor.
 
